@@ -1,9 +1,12 @@
 {
     "image": "mcr.microsoft.com/devcontainers/rust",
     "features": {
-        "ghcr.io/devcontainers/templates/rust:5.0.0": {},
-        "ghcr.io/devcontainers/features/sshd:1": {},
         "ghcr.io/devcontainer-community/devcontainer-features/neovim.io:1": {},
-        "ghcr.io/meaningful-ooo/devcontainer-features/fish:2": {}
+        "ghcr.io/devcontainers/features/common-utils:2": {},
+        "ghcr.io/esimkowitz/devcontainer-features/fish-starship:1": {},
+        "ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:4": {
+            "moby": "false"
+        }
     }
 }
