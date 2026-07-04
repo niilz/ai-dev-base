@@ -20,10 +20,10 @@
       "resolved": "ghcr.io/devcontainers/features/docker-in-docker@sha256:4fa87399214366e320d489991769c4f3f461e1ffe461f54eea78a41b34945bb5",
       "integrity": "sha256:4fa87399214366e320d489991769c4f3f461e1ffe461f54eea78a41b34945bb5"
     },
-    "ghcr.io/esimkowitz/devcontainer-features/fish-starship:1": {
-      "version": "1.2.2",
-      "resolved": "ghcr.io/esimkowitz/devcontainer-features/fish-starship@sha256:377fcad7dd08855e3fa77d7a20800156ed8bdaee8daa47e4ed786230d0c7d887",
-      "integrity": "sha256:377fcad7dd08855e3fa77d7a20800156ed8bdaee8daa47e4ed786230d0c7d887"
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "1.1.0",
+      "resolved": "ghcr.io/devcontainers/features/sshd@sha256:f5251b8e4325f68f7280973c6cd65daff414449c66f240621502d4e8e74eb7ee",
+      "integrity": "sha256:f5251b8e4325f68f7280973c6cd65daff414449c66f240621502d4e8e74eb7ee"
     }
   }
 }

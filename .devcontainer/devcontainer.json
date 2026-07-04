@@ -3,10 +3,22 @@
     "features": {
         "ghcr.io/devcontainer-community/devcontainer-features/neovim.io:1": {},
         "ghcr.io/devcontainers/features/common-utils:2": {},
-        "ghcr.io/esimkowitz/devcontainer-features/fish-starship:1": {},
         "ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1": {},
+        "ghcr.io/devcontainers/features/sshd:1": {},
         "ghcr.io/devcontainers/features/docker-in-docker:4": {
             "moby": "false"
         }
-    }
+    },
+    // Forward port 2222 to access the SSH server from your host
+    "forwardPorts": [
+        2222
+    ],
+    // Pre-create host directories to ensure proper ownership (avoiding Docker creating them as root)
+    "initializeCommand": "mkdir -p ~/DEV/devcontainers/gemini ~/DEV/devcontainers/ssh ~/DEV/devcontainers/docker",
+    // Bind-mount host-side directories under ~/DEV/devcontainers to persist configurations
+    "mounts": [
+        "source=${localEnv:HOME}/DEV/devcontainers/gemini,target=/home/vscode/.gemini,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/DEV/devcontainers/ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/DEV/devcontainers/docker,target=/home/vscode/.docker,type=bind,consistency=cached"
+    ]
 }
