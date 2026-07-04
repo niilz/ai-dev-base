@@ -13,12 +13,19 @@
     "forwardPorts": [
         2222
     ],
-    // Pre-create host directories to ensure proper ownership (avoiding Docker creating them as root)
-    "initializeCommand": "mkdir -p ~/DEV/devcontainers/gemini ~/DEV/devcontainers/ssh ~/DEV/devcontainers/docker",
+    // Pass the host-side env file to the container without mounting it (keeps it invisible inside the container)
+    "runArgs": [
+        "--env-file",
+        "${localEnv:HOME}/DEV/devcontainers/devcontainer.env"
+    ],
+    // Pre-create host directories and the environment file to ensure proper ownership and avoid startup failures
+    "initializeCommand": "mkdir -p ~/DEV/devcontainers/gemini ~/DEV/devcontainers/ssh ~/DEV/devcontainers/docker && [ -f ~/DEV/devcontainers/devcontainer.env ] || (echo 'DEVCONTAINER_PASSWORD=' && echo 'DEVCONTAINER_PASSWORD_HASH=') > ~/DEV/devcontainers/devcontainer.env",
     // Bind-mount host-side directories under ~/DEV/devcontainers to persist configurations
     "mounts": [
         "source=${localEnv:HOME}/DEV/devcontainers/gemini,target=/home/vscode/.gemini,type=bind,consistency=cached",
         "source=${localEnv:HOME}/DEV/devcontainers/ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
         "source=${localEnv:HOME}/DEV/devcontainers/docker,target=/home/vscode/.docker,type=bind,consistency=cached"
-    ]
+    ],
+    // Set the password on container startup if provided via host environment variables
+    "postStartCommand": "if [ -n \"$DEVCONTAINER_PASSWORD_HASH\" ]; then sudo usermod --password \"$DEVCONTAINER_PASSWORD_HASH\" $(whoami); elif [ -n \"$DEVCONTAINER_PASSWORD\" ]; then echo \"$(whoami):$DEVCONTAINER_PASSWORD\" | sudo chpasswd; fi"
 }
