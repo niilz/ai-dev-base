@@ -13,7 +13,7 @@
     "initializeCommand": "mkdir -p ~/DEV/devcontainers/gemini ~/DEV/devcontainers/ssh ~/DEV/devcontainers/docker && [ -f ~/DEV/devcontainers/devcontainer.env ] || (echo 'DEVCONTAINER_PASSWORD=' && echo 'DEVCONTAINER_PASSWORD_HASH=') > ~/DEV/devcontainers/devcontainer.env",
     // Bind-mount host-side directories under ~/DEV/devcontainers to persist configurations
     "mounts": [
--       "source=${localEnv:HOME}/DEV/devcontainers/ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/DEV/devcontainers/ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
         "source=${localEnv:HOME}/DEV/devcontainers/gemini,target=/home/vscode/.gemini,type=bind,consistency=cached",
         "source=${localEnv:HOME}/DEV/devcontainers/devcontainer.env,target=/tmp/devcontainer.env,type=bind,readonly"
     ],
