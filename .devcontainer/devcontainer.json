@@ -20,6 +20,6 @@
             "moby": "false"
         }
     },
-    // Run dotbot at container start using the repo securely cloned during the build
-    "postCreateCommand": "dotbot -c /opt/dotbot.yaml -d /opt/dev-configs"
+    // Set fish as default shell, then run dotbot
+    "postCreateCommand": "sudo chsh -s /usr/bin/fish vscode && dotbot -c /opt/dotbot.yaml -d /opt/dev-configs"
 }
