@@ -1,0 +1,10 @@
+- clean: ['~']
+
+- create:
+    - ~/.config
+
+- link:
+    ~/.config/fish: shell/fish
+    ~/.config/starship.toml: shell/starship.toml
+    ~/.config/nvim: editor/nvim
+    ~/agents.md: agentic/AGENTS.md
