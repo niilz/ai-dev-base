@@ -20,6 +20,10 @@
             "moby": "false"
         }
     },
+    "containerEnv": {
+        "TERM": "xterm-256color",
+        "COLORTERM": "truecolor"
+    },
     // Set fish as default shell, then run dotbot
     "postCreateCommand": "sudo chsh -s /usr/bin/fish vscode && dotbot -c /opt/dotbot.yaml -d /opt/dev-configs"
 }
