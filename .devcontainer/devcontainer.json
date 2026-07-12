@@ -12,13 +12,18 @@
         2222
     ],
     "features": {
-        "ghcr.io/devcontainer-community/devcontainer-features/neovim.io:1": {},
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1": {},
         "ghcr.io/devcontainers/features/sshd:1": {},
         "ghcr.io/devcontainers/features/docker-in-docker:4": {
             "moby": "false"
-        }
+        },
+        "ghcr.io/devcontainers/features/node:2": {
+            "pnpmVersion": "latest",
+            "nodeGypDependencies": true
+        },
+        "ghcr.io/jsburckhardt/devcontainer-features/fd:1": {},
+        "ghcr.io/jsburckhardt/devcontainer-features/ripgrep:1": {}
     },
     "containerEnv": {
         "TERM": "xterm-256color",

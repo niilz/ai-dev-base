@@ -2,9 +2,14 @@
 
 - create:
     - ~/.config
+    - ~/.config/nvim
 
 - link:
     ~/.config/fish: shell/fish
     ~/.config/starship.toml: shell/starship.toml
-    ~/.config/nvim: editor/nvim
+    ~/.config/nvim/init.lua: editor/nvim/init.lua
+    ~/.config/nvim/lua: editor/nvim/lua
+    ~/.config/nvim/after: editor/nvim/after
+    ~/.config/nvim/filetype.vim: editor/nvim/filetype.vim
+    ~/.config/nvim/.prettierrc.yml: editor/nvim/.prettierrc.yml
     ~/agents.md: agentic/AGENTS.md

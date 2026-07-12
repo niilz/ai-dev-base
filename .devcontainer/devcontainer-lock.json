@@ -5,11 +5,6 @@
       "resolved": "ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli@sha256:d7ae5139e62443070175cae13c275ae08efa8d89d6d5d432f96f3f9df51c2030",
       "integrity": "sha256:d7ae5139e62443070175cae13c275ae08efa8d89d6d5d432f96f3f9df51c2030"
     },
-    "ghcr.io/devcontainer-community/devcontainer-features/neovim.io:1": {
-      "version": "1.0.3",
-      "resolved": "ghcr.io/devcontainer-community/devcontainer-features/neovim.io@sha256:534aa717abab63f4f0b78b572ece6bfbb2c47e6ae92ddb791af02076b5f37836",
-      "integrity": "sha256:534aa717abab63f4f0b78b572ece6bfbb2c47e6ae92ddb791af02076b5f37836"
-    },
     "ghcr.io/devcontainers/features/common-utils:2": {
       "version": "2.5.9",
       "resolved": "ghcr.io/devcontainers/features/common-utils@sha256:cb0c4d3c276f157eed17935747e364178d75fee17f55c4e129966f64633deb3a",
@@ -20,10 +15,25 @@
       "resolved": "ghcr.io/devcontainers/features/docker-in-docker@sha256:4fa87399214366e320d489991769c4f3f461e1ffe461f54eea78a41b34945bb5",
       "integrity": "sha256:4fa87399214366e320d489991769c4f3f461e1ffe461f54eea78a41b34945bb5"
     },
+    "ghcr.io/devcontainers/features/node:2": {
+      "version": "2.1.0",
+      "resolved": "ghcr.io/devcontainers/features/node@sha256:586c9a6f7dd40bd3ba2cd41e7f2f88dcc31fbe5d1442afcbf07ffbc66b686857",
+      "integrity": "sha256:586c9a6f7dd40bd3ba2cd41e7f2f88dcc31fbe5d1442afcbf07ffbc66b686857"
+    },
     "ghcr.io/devcontainers/features/sshd:1": {
       "version": "1.1.0",
       "resolved": "ghcr.io/devcontainers/features/sshd@sha256:f5251b8e4325f68f7280973c6cd65daff414449c66f240621502d4e8e74eb7ee",
       "integrity": "sha256:f5251b8e4325f68f7280973c6cd65daff414449c66f240621502d4e8e74eb7ee"
+    },
+    "ghcr.io/jsburckhardt/devcontainer-features/fd:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/jsburckhardt/devcontainer-features/fd@sha256:ad1a09751358ab1528fb2d2796170c2279dc80aa69cbdd9826fb9678ed04c30f",
+      "integrity": "sha256:ad1a09751358ab1528fb2d2796170c2279dc80aa69cbdd9826fb9678ed04c30f"
+    },
+    "ghcr.io/jsburckhardt/devcontainer-features/ripgrep:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/jsburckhardt/devcontainer-features/ripgrep@sha256:e24c026e6c06d7d2ccbc802ca0f788d57af6105e929f92270c206dfd8b296669",
+      "integrity": "sha256:e24c026e6c06d7d2ccbc802ca0f788d57af6105e929f92270c206dfd8b296669"
     }
   }
 }
