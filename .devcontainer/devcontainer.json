@@ -37,7 +37,8 @@
         "COLORTERM": "truecolor"
     },
     "mounts": [
-        "source=${localWorkspaceFolder}/.gemini,target=/home/vscode/.gemini,type=bind,consistency=cached"
+        "source=${localWorkspaceFolder}/.gemini,target=/home/vscode/.gemini,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached"
     ],
     // Change shell, permanently destroy sudo privileges, then configure environment
     "postCreateCommand": "sudo chsh -s /usr/bin/fish vscode && sudo rm -f /etc/sudoers.d/vscode && dotbot -c /opt/dotbot.yaml -d /opt/dev-configs"
