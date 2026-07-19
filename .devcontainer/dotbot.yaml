@@ -3,6 +3,9 @@
 - create:
     - ~/.config
     - ~/.config/nvim
+    - ~/.gemini
+    - ~/.gemini/config
+    - ~/.claude
 
 - link:
     ~/.config/fish: shell/fish
@@ -12,4 +15,10 @@
     ~/.config/nvim/after: editor/nvim/after
     ~/.config/nvim/filetype.vim: editor/nvim/filetype.vim
     ~/.config/nvim/.prettierrc.yml: editor/nvim/.prettierrc.yml
-    ~/agents.md: agentic/AGENTS.md
+    ~/AGENTS.md: agentic/AGENTS.md
+    ~/.gemini/settings.json: agentic/.gemini/settings.json
+    ~/.gemini/config/hooks.json: agentic/.gemini/config/hooks.json
+    ~/.gemini/config/plugins: agentic/.gemini/config/plugins
+    ~/.gemini/config/skills: agentic/.gemini/config/skills
+    ~/.gemini/GEMINI.md: agentic/.gemini/GEMINI.md
+    ~/.claude/CLAUDE.md: agentic/.claude/CLAUDE.md
