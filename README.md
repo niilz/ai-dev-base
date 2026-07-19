@@ -4,6 +4,18 @@ This repository serves as a base template for a safe, standardized AI-coding env
 
 It provides a consistent `.devcontainer` setup that can be merged into any existing or new project, ensuring you have your preferred tools, dotfiles, and configurations ready to go.
 
+## Prerequisites: GitLab Configurations Pull
+
+Before building the container, you must set the `DEV_CON_HOME` environment variable on your local machine. The Docker build process uses this to securely pass a GitLab SSH key as a build secret so it can clone your private `dev-configs` repository.
+
+**Security Best Practice:** The design idea here is to use a *dedicated* SSH key for this devcontainer (named `devcontainer-key`) rather than mounting or sharing your global host SSH key (from `~/.ssh`). This ensures your primary host credentials remain completely isolated and are never exposed inside your container environments.
+
+1. Ensure your dedicated SSH key is located at: `$DEV_CON_HOME/ssh/devcontainer-key`
+2. Export the variable in your local shell profile (e.g., `~/.zshrc` or `~/.bashrc`):
+   ```bash
+   export DEV_CON_HOME="/path/to/your/dev-con-home"
+   ```
+
 ## How to use this template in an existing project
 
 We use the **Template Remote** pattern. This allows you to pull the base setup into any project, and easily fetch updates if this base template improves over time.
