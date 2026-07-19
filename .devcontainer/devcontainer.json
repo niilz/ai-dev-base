@@ -15,7 +15,9 @@
     "features": {
         "ghcr.io/w3cj/devcontainer-features/firewall:latest": {
             "verbose": true,
-            "googleAiApi": true
+            "hosts": "lh3.googleusercontent.com",
+            "googleAiApi": true,
+            "dnsPublic": true
         },
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1": {},
