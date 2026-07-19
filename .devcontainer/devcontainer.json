@@ -2,7 +2,8 @@
     "build": {
         "dockerfile": "Dockerfile",
         "options": [
-            "--secret", "id=gitlab_key,src=${localEnv:DEV_CON_HOME}/ssh/gitlab-niilz"
+            "--secret",
+            "id=gitlab_key,src=${localEnv:DEV_CON_HOME}/ssh/gitlab-niilz"
         ],
         "args": {
             "BASE_IMAGE": "mcr.microsoft.com/devcontainers/rust:latest"
@@ -12,6 +13,7 @@
         2222
     ],
     "features": {
+        "ghcr.io/w3cj/devcontainer-features/firewall:latest": {},
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1": {},
         "ghcr.io/devcontainers/features/sshd:1": {},
