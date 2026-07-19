@@ -7,13 +7,15 @@
 
 - create:
     - ~/.config
+    - ~/.config/fish
     - ~/.config/nvim
     - ~/.gemini
     - ~/.gemini/config
     - ~/.claude
 
 - link:
-    ~/.config/fish: shell/fish
+    ~/.config/fish/config.fish: shell/fish/config.fish
+    ~/.config/fish/functions: shell/fish/functions
     ~/.config/starship.toml: shell/starship.toml
     ~/.config/nvim/init.lua: editor/nvim/init.lua
     ~/.config/nvim/lua: editor/nvim/lua

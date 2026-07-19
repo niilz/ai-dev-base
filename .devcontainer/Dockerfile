@@ -24,7 +24,7 @@ RUN ARCH=$(uname -m) && \
     ln -s /opt/nvim-${NVIM_ARCH}/bin/nvim /usr/local/bin/nvim && \
     rm nvim.tar.gz
 
-# Clone dev-configs using build secret as root (files will be read-only for vscode)
+# Clone dev-configs using build secret as root
 RUN --mount=type=secret,id=gitlab_key \
     mkdir -p -m 0700 ~/.ssh && ssh-keyscan gitlab.com >> ~/.ssh/known_hosts && \
     GIT_SSH_COMMAND="ssh -i /run/secrets/gitlab_key -o IdentitiesOnly=yes" \
