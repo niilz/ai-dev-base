@@ -3,7 +3,7 @@ FROM ${BASE_IMAGE}
 
 # Install prerequisites
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends fish python3-pip unzip \
+    && apt-get install -y --no-install-recommends fish fzf python3-pip unzip \
     && curl -sS https://starship.rs/install.sh | sh -s -- -y \
     && pip3 install --break-system-packages dotbot
 
