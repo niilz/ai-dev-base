@@ -24,17 +24,16 @@ RUN ARCH=$(uname -m) && \
     ln -s /opt/nvim-${NVIM_ARCH}/bin/nvim /usr/local/bin/nvim && \
     rm nvim.tar.gz
 
+# Clone dev-configs using build secret as root (files will be read-only for vscode)
+RUN --mount=type=secret,id=gitlab_key \
+    mkdir -p -m 0700 ~/.ssh && ssh-keyscan gitlab.com >> ~/.ssh/known_hosts && \
+    GIT_SSH_COMMAND="ssh -i /run/secrets/gitlab_key -o IdentitiesOnly=yes" \
+    git clone git@gitlab.com:niilz/dev-configs.git /opt/dev-configs && \
+    rm -rf ~/.ssh
+
 # Switch to the vscode user
 USER vscode
 WORKDIR /home/vscode
 
 # Copy dotbot config to /opt (survives the /home/vscode volume mount)
 COPY --chown=vscode:vscode dotbot.yaml /opt/dotbot.yaml
-
-# Clone dev-configs using build secret
-RUN --mount=type=secret,id=gitlab_key,uid=1000 \
-    sudo mkdir -p /opt/dev-configs && sudo chown vscode:vscode /opt/dev-configs && \
-    mkdir -p -m 0700 ~/.ssh && ssh-keyscan gitlab.com >> ~/.ssh/known_hosts && \
-    GIT_SSH_COMMAND="ssh -i /run/secrets/gitlab_key -o IdentitiesOnly=yes" \
-    git clone git@gitlab.com:niilz/dev-configs.git /opt/dev-configs && \
-    rm -rf ~/.ssh
