@@ -3,9 +3,9 @@ FROM ${BASE_IMAGE}
 
 # Install prerequisites
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends fish fzf python3-pip unzip \
+    && apt-get install -y --no-install-recommends fish fzf pipx unzip \
     && curl -sS https://starship.rs/install.sh | sh -s -- -y \
-    && pip3 install --break-system-packages dotbot
+    && PIPX_HOME=/opt/pipx PIPX_BIN_DIR=/usr/local/bin pipx install dotbot
 
 # Install Lua Language Server
 ARG LUA_LS_VERSION=3.18.2
