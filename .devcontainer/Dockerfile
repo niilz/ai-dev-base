@@ -31,7 +31,7 @@ WORKDIR /home/vscode
 # Copy dotbot config to /opt (survives the /home/vscode volume mount)
 COPY --chown=vscode:vscode dotbot.yaml /opt/dotbot.yaml
 
-# Clone dev-configs using build secret; sudo to create dir in /opt, clone as vscode
+# Clone dev-configs using build secret
 RUN --mount=type=secret,id=gitlab_key,uid=1000 \
     sudo mkdir -p /opt/dev-configs && sudo chown vscode:vscode /opt/dev-configs && \
     mkdir -p -m 0700 ~/.ssh && ssh-keyscan gitlab.com >> ~/.ssh/known_hosts && \

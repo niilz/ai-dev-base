@@ -37,6 +37,6 @@
     "mounts": [
         "source=${localWorkspaceFolder}/.gemini,target=/home/vscode/.gemini,type=bind,consistency=cached"
     ],
-    // Set fish as default shell, then run dotbot
-    "postCreateCommand": "sudo chsh -s /usr/bin/fish vscode && dotbot -c /opt/dotbot.yaml -d /opt/dev-configs"
+    // Change shell, permanently destroy sudo privileges, then configure environment
+    "postCreateCommand": "sudo chsh -s /usr/bin/fish vscode && sudo rm -f /etc/sudoers.d/vscode && dotbot -c /opt/dotbot.yaml -d /opt/dev-configs"
 }
