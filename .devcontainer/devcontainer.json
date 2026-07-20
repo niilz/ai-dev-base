@@ -3,7 +3,7 @@
         "dockerfile": "Dockerfile",
         "options": [
             "--secret",
-            "id=gitlab_key,src=${localEnv:DEV_CON_HOME}/ssh/gitlab-niilz"
+            "id=gitlab_key,src=${localEnv:CONFIG_REPO_SSH_KEY}"
         ],
         "args": {
             "BASE_IMAGE": "mcr.microsoft.com/devcontainers/rust:latest"
