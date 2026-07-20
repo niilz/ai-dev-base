@@ -12,17 +12,14 @@ ENV PIP_CERT=/usr/local/share/ca-certificates/cisco-root.crt \
     NODE_EXTRA_CA_CERTS=/usr/local/share/ca-certificates/cisco-root.crt
 
 # Install prerequisites
-RUN sed -i 's/http:/https:/g' /etc/apt/sources.list.d/debian.sources 2>/dev/null || sed -i 's/http:/https:/g' /etc/apt/sources.list 2>/dev/null || true \
-    && apt-get update \
-    && apt-get install -y --no-install-recommends fish pipx fzf unzip \
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends fish fzf pipx unzip \
     && curl -sS https://starship.rs/install.sh | sh -s -- -y \
     && PIPX_HOME=/opt/pipx PIPX_BIN_DIR=/usr/local/bin pipx install dotbot
 
 # Install Lua Language Server
 ARG LUA_LS_VERSION=3.18.2
-RUN ARCH=$(uname -m) && \
-    if [ "$ARCH" = "aarch64" ]; then LUA_ARCH="linux-arm64"; else LUA_ARCH="linux-x64"; fi && \
-    curl -sL "https://github.com/LuaLS/lua-language-server/releases/download/${LUA_LS_VERSION}/lua-language-server-${LUA_LS_VERSION}-${LUA_ARCH}.tar.gz" -o lua-language-server.tar.gz \
+RUN curl -sL "https://github.com/LuaLS/lua-language-server/releases/download/${LUA_LS_VERSION}/lua-language-server-${LUA_LS_VERSION}-linux-x64.tar.gz" -o lua-language-server.tar.gz \
     && mkdir -p /opt/lua-language-server \
     && tar -xzf lua-language-server.tar.gz -C /opt/lua-language-server \
     && ln -s /opt/lua-language-server/bin/lua-language-server /usr/local/bin/lua-language-server \
