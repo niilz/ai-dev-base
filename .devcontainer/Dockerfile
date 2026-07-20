@@ -4,7 +4,7 @@ FROM ${BASE_IMAGE}
 # The umbrella issue
 COPY cisco-root.crt /usr/local/share/ca-certificates/cisco-root.crt
 RUN chmod 644 /usr/local/share/ca-certificates/cisco-root.crt && \
-RUN update-ca-certificates
+        update-ca-certificates
 
 # Ensure python/pipx, curl, node etc trust the corporate certificate
 ENV PIP_CERT=/usr/local/share/ca-certificates/cisco-root.crt \
