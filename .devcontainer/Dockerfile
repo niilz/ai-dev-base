@@ -1,4 +1,5 @@
-ARG BASE_IMAGE="mcr.microsoft.com/devcontainers/rust:latest"
+ARG BASE_IMAGE="mcr.microsoft.com/devcontainers/rust:bookworm"
+#ARG BASE_IMAGE=ubuntu:26.04
 FROM ${BASE_IMAGE}
 
 # The umbrella issue
