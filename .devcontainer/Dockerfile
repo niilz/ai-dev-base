@@ -4,13 +4,8 @@ FROM ${BASE_IMAGE}
 
 # The umbrella issue
 COPY cisco-root.crt /usr/local/share/ca-certificates/cisco-root.crt
-RUN chmod 644 /usr/local/share/ca-certificates/cisco-root.crt && \
-        update-ca-certificates
-
-# Ensure python/pipx, curl, node etc trust the corporate certificate
-ENV PIP_CERT=/usr/local/share/ca-certificates/cisco-root.crt \
-    REQUESTS_CA_BUNDLE=/usr/local/share/ca-certificates/cisco-root.crt \
-    NODE_EXTRA_CA_CERTS=/usr/local/share/ca-certificates/cisco-root.crt
+#RUN chmod 644 /usr/local/share/ca-certificates/cisco-root.crt && \
+RUN        update-ca-certificates
 
 # Install prerequisites
 RUN apt-get update \
