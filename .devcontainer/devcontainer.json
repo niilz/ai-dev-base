@@ -32,6 +32,16 @@
         "ghcr.io/jsburckhardt/devcontainer-features/fd:1": {},
         "ghcr.io/jsburckhardt/devcontainer-features/ripgrep:1": {}
     },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "jdinhlife.gruvbox"
+            ],
+            "settings": {
+                "workbench.colorTheme": "Gruvbox Dark Hard"
+            }
+        }
+    },
     "containerEnv": {
         "TERM": "xterm-256color",
         "COLORTERM": "truecolor"
