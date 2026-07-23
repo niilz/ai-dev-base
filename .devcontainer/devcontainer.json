@@ -15,12 +15,13 @@
     "features": {
         "ghcr.io/w3cj/devcontainer-features/firewall:latest": {
             "verbose": true,
-            "hosts": "lh3.googleusercontent.com",
+            "hosts": "lh3.googleusercontent.com,opencode.ai",
             "githubDomains": true,
             "googleAiApi": true
         },
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1": {},
+        "ghcr.io/devcontainer-community/devcontainer-features/opencode.ai:1": {},
         "ghcr.io/devcontainers/features/sshd:1": {},
         "ghcr.io/devcontainers/features/node:2": {
             "pnpmVersion": "latest",

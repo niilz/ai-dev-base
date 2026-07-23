@@ -5,6 +5,11 @@
       "resolved": "ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli@sha256:d7ae5139e62443070175cae13c275ae08efa8d89d6d5d432f96f3f9df51c2030",
       "integrity": "sha256:d7ae5139e62443070175cae13c275ae08efa8d89d6d5d432f96f3f9df51c2030"
     },
+    "ghcr.io/devcontainer-community/devcontainer-features/opencode.ai:1": {
+      "version": "1.0.7",
+      "resolved": "ghcr.io/devcontainer-community/devcontainer-features/opencode.ai@sha256:312520e651f8438c67d6823464fffaf42449e1e05e7020ef721748a4a95fa1fb",
+      "integrity": "sha256:312520e651f8438c67d6823464fffaf42449e1e05e7020ef721748a4a95fa1fb"
+    },
     "ghcr.io/devcontainers-extra/features/apt-get-packages:1": {
       "version": "1.0.8",
       "resolved": "ghcr.io/devcontainers-extra/features/apt-get-packages@sha256:776fa11c30c50fa91d5e1bf050444b0f130827457109c349db92e8e126b750ec",
@@ -14,11 +19,6 @@
       "version": "2.5.9",
       "resolved": "ghcr.io/devcontainers/features/common-utils@sha256:cb0c4d3c276f157eed17935747e364178d75fee17f55c4e129966f64633deb3a",
       "integrity": "sha256:cb0c4d3c276f157eed17935747e364178d75fee17f55c4e129966f64633deb3a"
-    },
-    "ghcr.io/devcontainers/features/docker-in-docker:4": {
-      "version": "4.0.0",
-      "resolved": "ghcr.io/devcontainers/features/docker-in-docker@sha256:4fa87399214366e320d489991769c4f3f461e1ffe461f54eea78a41b34945bb5",
-      "integrity": "sha256:4fa87399214366e320d489991769c4f3f461e1ffe461f54eea78a41b34945bb5"
     },
     "ghcr.io/devcontainers/features/node:2": {
       "version": "2.1.0",
