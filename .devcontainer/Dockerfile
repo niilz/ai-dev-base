@@ -2,10 +2,12 @@ ARG BASE_IMAGE="mcr.microsoft.com/devcontainers/rust:bookworm"
 #ARG BASE_IMAGE=ubuntu:26.04
 FROM ${BASE_IMAGE}
 
-# The umbrella issue
-COPY cisco-root.crt /usr/local/share/ca-certificates/cisco-root.crt
-#RUN chmod 644 /usr/local/share/ca-certificates/cisco-root.crt && \
-RUN        update-ca-certificates
+# The umbrella issue (Optional Cisco root certificate)
+COPY Dockerfile cisco-root.cr[t] /tmp/optional-certs/
+RUN if [ -f "/tmp/optional-certs/cisco-root.crt" ]; then \
+        cp /tmp/optional-certs/cisco-root.crt /usr/local/share/ca-certificates/cisco-root.crt && \
+        update-ca-certificates; \
+    fi
 
 # Install prerequisites
 RUN apt-get update \
