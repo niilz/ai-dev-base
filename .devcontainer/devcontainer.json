@@ -42,7 +42,9 @@
     },
     "containerEnv": {
         "TERM": "xterm-256color",
-        "COLORTERM": "truecolor"
+        "COLORTERM": "truecolor",
+        "EDITOR": "nvim",
+        "VISUAL": "nvim"
     },
     "mounts": [
         "source=${localWorkspaceFolder}/.gemini,target=/home/vscode/.gemini,type=bind,consistency=cached",
