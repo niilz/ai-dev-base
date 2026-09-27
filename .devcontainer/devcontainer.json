@@ -54,5 +54,5 @@
     ],
     "initializeCommand": "mkdir -p .history/fish .gemini .claude",
     // Change shell, permanently destroy sudo privileges, then configure environment
-    "postCreateCommand": "sudo chsh -s /usr/bin/fish vscode && sudo rm -f /etc/sudoers.d/vscode && dotbot -c /opt/dotbot.yaml -d /opt/dev-configs"
+    "postCreateCommand": "sudo chsh -s /usr/bin/fish vscode && sudo rm -f /etc/sudoers.d/vscode && dotbot -c /opt/dotbot.yaml -d /opt/dev-configs && pnpm add -g --ignore-scripts @earendil-works/pi-coding-agent"
 }
