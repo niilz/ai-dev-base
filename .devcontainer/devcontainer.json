@@ -47,7 +47,8 @@
         "TERM": "xterm-256color",
         "COLORTERM": "truecolor",
         "EDITOR": "nvim",
-        "VISUAL": "nvim"
+        "VISUAL": "nvim",
+        "PULSE_SERVER": "tcp:host.docker.internal:4713"
     },
     "mounts": [
         "source=${localWorkspaceFolder}/.history/fish,target=/home/vscode/.local/share/fish,type=bind,consistency=cached",
