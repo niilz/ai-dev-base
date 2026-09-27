@@ -42,6 +42,7 @@
         }
     },
     "containerEnv": {
+        "PNPM_HOME": "/home/vscode/.local/share/pnpm",
         "TERM": "xterm-256color",
         "COLORTERM": "truecolor",
         "EDITOR": "nvim",
