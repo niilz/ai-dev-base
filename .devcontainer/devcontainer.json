@@ -45,9 +45,7 @@
         "TERM": "xterm-256color",
         "COLORTERM": "truecolor",
         "EDITOR": "nvim",
-        "VISUAL": "nvim",
-        "PNPM_HOME": "/home/vscode/.local/share/pnpm",
-        "PATH": "/home/vscode/.local/share/pnpm/bin:${containerEnv:PATH}"
+        "VISUAL": "nvim"
     },
     "mounts": [
         "source=${localWorkspaceFolder}/.history/fish,target=/home/vscode/.local/share/fish,type=bind,consistency=cached",
