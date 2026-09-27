@@ -43,5 +43,8 @@ RUN --mount=type=secret,id=gitlab_key \
 USER vscode
 WORKDIR /home/vscode
 
+# Ensure directory is created with vscode ownership before bind mounts attach
+RUN mkdir -p /home/vscode/.local/share
+
 # Copy dotbot config to /opt (survives the /home/vscode volume mount)
 COPY --chown=vscode:vscode dotbot.yaml /opt/dotbot.yaml
