@@ -11,7 +11,7 @@ RUN --mount=type=bind,target=/tmp/build-context \
 
 # Install prerequisites
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends fish fzf pipx unzip \
+    && apt-get install -y --no-install-recommends fish fzf pipx unzip alsa-utils pulseaudio-utils \
     && curl -sS https://starship.rs/install.sh | sh -s -- -y \
     && PIPX_HOME=/opt/pipx PIPX_BIN_DIR=/usr/local/bin pipx install dotbot
 
@@ -42,6 +42,12 @@ RUN --mount=type=secret,id=gitlab_key \
 # Switch to the vscode user
 USER vscode
 WORKDIR /home/vscode
+
+# Ensure directory is created with vscode ownership before bind mounts attach
+RUN mkdir -p /home/vscode/.local/share
+ENV PNPM_HOME="/home/vscode/.local/share/pnpm"
+ENV PATH="$PNPM_HOME/bin:$PATH"
+
 
 # Copy dotbot config to /opt (survives the /home/vscode volume mount)
 COPY --chown=vscode:vscode dotbot.yaml /opt/dotbot.yaml

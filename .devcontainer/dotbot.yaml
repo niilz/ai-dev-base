@@ -24,6 +24,8 @@
     ~/.config/nvim/.prettierrc.yml: editor/nvim/.prettierrc.yml
     ~/AGENTS.md: agentic/AGENTS.md
     ~/.gemini/settings.json: agentic/.gemini/settings.json
+    ~/.gemini/hooks.json: agentic/.gemini/config/hooks.json
     ~/.gemini/config/hooks.json: agentic/.gemini/config/hooks.json
+    ~/.gemini/rules: agentic/.gemini/rules
     ~/.gemini/GEMINI.md: agentic/.gemini/GEMINI.md
     ~/.claude/CLAUDE.md: agentic/.claude/CLAUDE.md

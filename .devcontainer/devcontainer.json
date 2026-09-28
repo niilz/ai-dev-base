@@ -18,7 +18,8 @@
             "hosts": "lh3.googleusercontent.com,opencode.ai",
             "githubDomains": true,
             "googleAiApi": true,
-            "cratesIoRegistry": true
+            "cratesIoRegistry": true,
+            "npmRegistry": true
         },
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1": {},
@@ -42,16 +43,19 @@
         }
     },
     "containerEnv": {
+        "PNPM_HOME": "/home/vscode/.local/share/pnpm",
         "TERM": "xterm-256color",
         "COLORTERM": "truecolor",
         "EDITOR": "nvim",
-        "VISUAL": "nvim"
+        "VISUAL": "nvim",
+        "PULSE_SERVER": "tcp:host.docker.internal:4713"
     },
     "mounts": [
+        "source=${localWorkspaceFolder}/.history/fish,target=/home/vscode/.local/share/fish,type=bind,consistency=cached",
         "source=${localWorkspaceFolder}/.gemini,target=/home/vscode/.gemini,type=bind,consistency=cached",
         "source=${localWorkspaceFolder}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached"
     ],
-    "initializeCommand": "mkdir -p .gemini .claude",
+    "initializeCommand": "mkdir -p .history/fish .gemini .claude",
     // Change shell, permanently destroy sudo privileges, then configure environment
-    "postCreateCommand": "sudo chsh -s /usr/bin/fish vscode && sudo rm -f /etc/sudoers.d/vscode && dotbot -c /opt/dotbot.yaml -d /opt/dev-configs"
+    "postCreateCommand": "sudo chsh -s /usr/bin/fish vscode && sudo rm -f /etc/sudoers.d/vscode && dotbot -c /opt/dotbot.yaml -d /opt/dev-configs && pnpm add -g --ignore-scripts @earendil-works/pi-coding-agent"
 }
