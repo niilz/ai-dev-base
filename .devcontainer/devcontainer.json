@@ -17,7 +17,8 @@
             "verbose": true,
             "hosts": "lh3.googleusercontent.com,opencode.ai",
             "githubDomains": true,
-            "googleAiApi": true
+            "googleAiApi": true,
+            "cratesIoRegistry": true
         },
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1": {},
