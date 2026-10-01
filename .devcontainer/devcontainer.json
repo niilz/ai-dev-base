@@ -15,7 +15,7 @@
     "features": {
         "ghcr.io/w3cj/devcontainer-features/firewall:latest": {
             "verbose": true,
-            "hosts": "lh3.googleusercontent.com,opencode.ai",
+            "hosts": "lh3.googleusercontent.com,opencode.ai,host.docker.internal",
             "githubDomains": true,
             "googleAiApi": true,
             "cratesIoRegistry": true,
@@ -48,7 +48,7 @@
         "COLORTERM": "truecolor",
         "EDITOR": "nvim",
         "VISUAL": "nvim",
-        "PULSE_SERVER": "tcp:host.docker.internal:4713"
+        "ANTIGRAVITY_MIC": "host.docker.internal:4713"
     },
     "mounts": [
         "source=${localWorkspaceFolder}/.history/fish,target=/home/vscode/.local/share/fish,type=bind,consistency=cached",
