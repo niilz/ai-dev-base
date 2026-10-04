@@ -13,6 +13,7 @@ RUN --mount=type=bind,target=/tmp/build-context \
 RUN apt-get update \
     && apt-get install -y --no-install-recommends fish fzf pipx unzip neovim \
     && curl -sS https://starship.rs/install.sh | sh -s -- -y \
+    && curl -sS https://herdr.dev/install.sh | sh -s -- -y \ 
     && PIPX_HOME=/opt/pipx PIPX_BIN_DIR=/usr/local/bin pipx install dotbot
 
 # Install Lua Language Server
