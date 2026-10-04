@@ -48,6 +48,7 @@
         "COLORTERM": "truecolor",
         "EDITOR": "nvim",
         "VISUAL": "nvim",
+        "SHELL": "/usr/bin/fish",
         "ANTIGRAVITY_MIC": "host.docker.internal:4713"
     },
     "mounts": [
