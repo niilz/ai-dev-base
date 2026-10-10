@@ -26,7 +26,6 @@
     ~/.config/herdr/config.toml: terminal/herdr/config.toml
     ~/AGENTS.md: agentic/AGENTS.md
     ~/.gemini/settings.json: agentic/.gemini/settings.json
-    ~/.gemini/hooks.json: agentic/.gemini/config/hooks.json
     ~/.gemini/config/hooks.json: agentic/.gemini/config/hooks.json
     ~/.gemini/rules: agentic/.gemini/rules
     ~/.gemini/GEMINI.md: agentic/.gemini/GEMINI.md
