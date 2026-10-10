@@ -22,7 +22,7 @@
             "npmRegistry": true
         },
         "ghcr.io/devcontainers/features/common-utils:2": {},
-        "ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1": {},
+        "ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1.0.2": {},
         "ghcr.io/devcontainer-community/devcontainer-features/opencode.ai:1": {},
         "ghcr.io/devcontainers/features/sshd:1": {},
         "ghcr.io/devcontainers/features/node:2": {
