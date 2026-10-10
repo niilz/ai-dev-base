@@ -15,7 +15,7 @@
     "features": {
         "ghcr.io/w3cj/devcontainer-features/firewall:latest": {
             "verbose": true,
-            "hosts": "lh3.googleusercontent.com,opencode.ai,host.docker.internal",
+            "hosts": "lh3.googleusercontent.com,opencode.ai,host.docker.internal,herdr.dev",
             "githubDomains": true,
             "googleAiApi": true,
             "cratesIoRegistry": true,
@@ -52,11 +52,12 @@
         "ANTIGRAVITY_MIC": "host.docker.internal:4713"
     },
     "mounts": [
-        "source=${localWorkspaceFolder}/.history/fish,target=/home/vscode/.local/share/fish,type=bind,consistency=cached",
-        "source=${localWorkspaceFolder}/.gemini,target=/home/vscode/.gemini,type=bind,consistency=cached",
-        "source=${localWorkspaceFolder}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached"
+        "source=${localWorkspaceFolder}/.local/fish,target=/home/vscode/.local/share/fish,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.local/herdr,target=/home/vscode/.config/herdr,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.local/gemini,target=/home/vscode/.gemini,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.local/claude,target=/home/vscode/.claude,type=bind,consistency=cached"
     ],
-    "initializeCommand": "mkdir -p .history/fish .gemini .claude",
+    "initializeCommand": "mkdir -p .local/fish .local/herdr .local/gemini .local/claude",
     // Change shell, permanently destroy sudo privileges, then configure environment
     "postCreateCommand": "sudo chsh -s /usr/bin/fish vscode && sudo rm -f /etc/sudoers.d/vscode && dotbot -c /opt/dotbot.yaml -d /opt/dev-configs && pnpm add -g --ignore-scripts @earendil-works/pi-coding-agent"
 }
