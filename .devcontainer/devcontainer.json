@@ -58,5 +58,5 @@
         "source=${localWorkspaceFolder}/.local/claude,target=/home/vscode/.claude,type=bind,consistency=cached"
     ],
     "initializeCommand": "mkdir -p .local/fish .local/gemini .local/claude .local/herdr",
-    "postCreateCommand": ".devcontainer/post-create.sh"
+    "postCreateCommand": "/opt/post-create.sh"
 }

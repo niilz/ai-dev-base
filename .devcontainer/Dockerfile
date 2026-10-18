@@ -40,6 +40,7 @@ RUN mkdir -p /home/vscode/.local/share
 ENV PNPM_HOME="/home/vscode/.local/share/pnpm"
 ENV PATH="$PNPM_HOME/bin:$PATH"
 
-
-# Copy dotbot config to /opt (survives the /home/vscode volume mount)
+# Copy dotbot config and post-create script to /opt so they are available
+# when starting the container via aidev.fish (--config) in projects without .devcontainer/
 COPY --chown=vscode:vscode dotbot.yaml /opt/dotbot.yaml
+COPY --chown=vscode:vscode --chmod=0755 post-create.sh /opt/post-create.sh
