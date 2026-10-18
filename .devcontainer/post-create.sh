@@ -15,6 +15,8 @@ dotbot -c /opt/dotbot.yaml -d /opt/dev-configs
 # Install pi-coding-agent into user-scoped PNPM_HOME (/home/vscode/.local/share/pnpm).
 # --ignore-scripts prevents arbitrary postinstall script execution.
 pnpm add -g --ignore-scripts @earendil-works/pi-coding-agent
+pi install npm:pi-antigravity
+
 # Install shared agent skills globally into ~/.agents/skills (and symlinked into ~/.claude/skills).
 # dotbot links ~/.gemini/config/skills and ~/.config/opencode/skills to ~/.agents/skills so all agents share them.
 npx --yes skills add herdrdev/herdr --skill herdr -g -a opencode -a pi -a claude-code -y
