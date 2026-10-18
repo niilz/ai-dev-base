@@ -25,12 +25,11 @@
     ~/.config/nvim/filetype.vim: editor/nvim/filetype.vim
     ~/.config/nvim/.prettierrc.yml: editor/nvim/.prettierrc.yml
     ~/.config/herdr/config.toml: terminal/herdr/config.toml
-    ~/AGENTS.md: agentic/AGENTS.md
+    $PWD/AGENTS.md: agentic/AGENTS.md
     ~/.gemini/settings.json: agentic/.gemini/settings.json
     ~/.gemini/config/hooks.json: agentic/.gemini/config/hooks.json
     ~/.gemini/rules/:
       glob: true
       path: agentic/.gemini/rules/*
-    ~/.gemini/rules/agents.md: agentic/AGENTS.md
     ~/.gemini/GEMINI.md: agentic/.gemini/GEMINI.md
     ~/.claude/CLAUDE.md: agentic/.claude/CLAUDE.md
