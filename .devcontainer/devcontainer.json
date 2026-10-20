@@ -10,7 +10,8 @@
         }
     },
     "forwardPorts": [
-        2222
+        2222,
+        1234
     ],
     "features": {
         "ghcr.io/w3cj/devcontainer-features/firewall:latest": {
