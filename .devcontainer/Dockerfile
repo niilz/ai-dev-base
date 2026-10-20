@@ -4,10 +4,7 @@ FROM ${BASE_IMAGE}
 
 # The umbrella issue (Optional Cisco root certificate)
 RUN --mount=type=bind,target=/tmp/build-context \
-    if [ -f "/tmp/build-context/cisco-root.crt" ]; then \
-        cp /tmp/build-context/cisco-root.crt /usr/local/share/ca-certificates/cisco-root.crt && \
-        update-ca-certificates; \
-    fi
+    bash /tmp/build-context/scripts/setup-cisco-cert.sh /tmp/build-context
 
 # Install prerequisites
 RUN apt-get update \
