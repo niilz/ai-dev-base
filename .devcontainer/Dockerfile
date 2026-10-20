@@ -11,10 +11,20 @@ RUN --mount=type=bind,target=/tmp/build-context \
 
 # Install prerequisites
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends fish fzf pipx unzip neovim \
+    && apt-get install -y --no-install-recommends fish fzf pipx unzip \
     && curl -sS https://starship.rs/install.sh | sh -s -- -y \
     && curl -fsSL https://herdr.dev/install.sh | HERDR_INSTALL_DIR=/usr/local/bin sh \
     && PIPX_HOME=/opt/pipx PIPX_BIN_DIR=/usr/local/bin pipx install dotbot
+
+# Install Neovim natively (supports arm64 and x86_64)
+ARG NVIM_VERSION=stable
+RUN ARCH=$(uname -m) && \
+    if [ "$ARCH" = "aarch64" ]; then NVIM_ARCH="arm64"; else NVIM_ARCH="x86_64"; fi && \
+    curl -sL "https://github.com/neovim/neovim/releases/download/${NVIM_VERSION}/nvim-linux-${NVIM_ARCH}.tar.gz" -o nvim.tar.gz && \
+    mkdir -p /opt/nvim && \
+    tar -xzf nvim.tar.gz -C /opt/nvim --strip-components=1 && \
+    ln -sf /opt/nvim/bin/nvim /usr/local/bin/nvim && \
+    rm nvim.tar.gz
 
 # Install Lua Language Server
 ARG LUA_LS_VERSION=3.18.2
