@@ -44,6 +44,14 @@ WORKDIR /home/vscode
 
 # Ensure directory is created with vscode ownership before bind mounts attach
 RUN mkdir -p /home/vscode/.local/share
+
+# herdr keeps its session state (session.json, snapshots) next to its Unix
+# sockets in ~/.config/herdr. We persist it via a named Docker volume rather
+# than a host bind mount, because sockets on macOS bind mounts are unreliable.
+# Docker copies the ownership of an existing image directory into a fresh
+# volume, so pre-creating it here keeps the volume writable for vscode
+# (otherwise it would be owned by root).
+RUN mkdir -p /home/vscode/.config/herdr
 ENV PNPM_HOME="/home/vscode/.local/share/pnpm"
 ENV PATH="$PNPM_HOME/bin:$PATH"
 

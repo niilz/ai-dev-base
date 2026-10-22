@@ -56,8 +56,10 @@
     "mounts": [
         "source=${localWorkspaceFolder}/.local/fish,target=/home/vscode/.local/share/fish,type=bind,consistency=cached",
         "source=${localWorkspaceFolder}/.local/gemini,target=/home/vscode/.gemini,type=bind,consistency=cached",
-        "source=${localWorkspaceFolder}/.local/claude,target=/home/vscode/.claude,type=bind,consistency=cached"
+        "source=${localWorkspaceFolder}/.local/claude,target=/home/vscode/.claude,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.local/pi,target=/home/vscode/.pi,type=bind,consistency=cached",
+        "source=herdr-state-${devcontainerId},target=/home/vscode/.config/herdr,type=volume"
     ],
-    "initializeCommand": "mkdir -p .local/fish .local/gemini .local/claude .local/herdr",
+    "initializeCommand": "mkdir -p .local/fish .local/gemini .local/claude .local/herdr .local/pi",
     "postCreateCommand": "/opt/post-create.sh"
 }
