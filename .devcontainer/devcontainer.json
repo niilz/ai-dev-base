@@ -51,7 +51,8 @@
         "VISUAL": "nvim",
         "SHELL": "/usr/bin/fish",
         "ANTIGRAVITY_MIC": "host.docker.internal:4713",
-        "HERDR_CONFIG_PATH": "${containerWorkspaceFolder}/.local/herdr/herdr.toml"
+        "HERDR_CONFIG_PATH": "${containerWorkspaceFolder}/.local/herdr/herdr.toml",
+        "NODE_OPTIONS": "--use-system-ca"
     },
     "mounts": [
         "source=${localWorkspaceFolder}/.local/fish,target=/home/vscode/.local/share/fish,type=bind,consistency=cached",

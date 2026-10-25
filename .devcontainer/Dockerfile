@@ -6,6 +6,15 @@ FROM ${BASE_IMAGE}
 RUN --mount=type=bind,target=/tmp/build-context \
     bash /tmp/build-context/scripts/setup-cisco-cert.sh /tmp/build-context
 
+# Remove untrusted eMudhra certs
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends --only-upgrade ca-certificates && \
+    rm -f /usr/share/ca-certificates/mozilla/emSign_ECC_Root_CA_-_G3.crt \
+          /usr/share/ca-certificates/mozilla/AAA_Certificate_Services.crt && \
+    sed -i '/emSign_ECC_Root_CA_-_G3/d; /AAA_Certificate_Services/d' /etc/ca-certificates.conf && \
+    update-ca-certificates --fresh && \
+    rm -rf /var/lib/apt/lists/*
+
 # Install prerequisites
 RUN apt-get update \
     && apt-get install -y --no-install-recommends fish fzf pipx unzip \
