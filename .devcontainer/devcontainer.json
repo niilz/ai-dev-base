@@ -27,6 +27,7 @@
             "installMaven": false,
             "installGradle": false
         },
+        "ghcr.io/devcontainers/features/github-cli:1": {},
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1.0.2": {},
         "ghcr.io/devcontainer-community/devcontainer-features/opencode.ai:1": {},
