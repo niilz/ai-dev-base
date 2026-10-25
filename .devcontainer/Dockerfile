@@ -17,7 +17,7 @@ RUN apt-get update && \
 
 # Install prerequisites
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends adb fish fzf pipx unzip \
+    && apt-get install -y --no-install-recommends adb fish fzf pipx unzip pulseaudio-utils \
     && curl -sS https://starship.rs/install.sh | sh -s -- -y \
     && curl -fsSL https://herdr.dev/install.sh | HERDR_INSTALL_DIR=/usr/local/bin sh \
     && PIPX_HOME=/opt/pipx PIPX_BIN_DIR=/usr/local/bin pipx install dotbot

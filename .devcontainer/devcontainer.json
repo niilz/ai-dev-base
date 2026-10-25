@@ -62,6 +62,9 @@
         "HERDR_CONFIG_PATH": "${containerWorkspaceFolder}/.local/herdr/herdr.toml",
         "NODE_OPTIONS": "--use-system-ca"
     },
+    "remoteEnv": {
+        "PULSE_SERVER": "${containerEnv:ANTIGRAVITY_MIC}"
+    },
     "mounts": [
         "source=${localWorkspaceFolder}/.local/fish,target=/home/vscode/.local/share/fish,type=bind,consistency=cached",
         "source=${localWorkspaceFolder}/.local/gemini,target=/home/vscode/.gemini,type=bind,consistency=cached",
