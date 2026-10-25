@@ -22,6 +22,11 @@
             "cratesIoRegistry": true,
             "npmRegistry": true
         },
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "21",
+            "installMaven": false,
+            "installGradle": false
+        },
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1.0.2": {},
         "ghcr.io/devcontainer-community/devcontainer-features/opencode.ai:1": {},
@@ -44,6 +49,7 @@
         }
     },
     "containerEnv": {
+        "REA_JADX_MCP_JAR": "/opt/jadx/jadx-headless-mcp.jar",
         "ADB_SERVER_SOCKET": "tcp:host.docker.internal:5037",
         "PNPM_HOME": "/home/vscode/.local/share/pnpm",
         "TERM": "xterm-256color",

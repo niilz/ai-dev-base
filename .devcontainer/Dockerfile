@@ -40,6 +40,13 @@ RUN curl -sL "https://github.com/LuaLS/lua-language-server/releases/download/${L
     && ln -s /opt/lua-language-server/bin/lua-language-server /usr/local/bin/lua-language-server \
     && rm lua-language-server.tar.gz
 
+# Install JADX Headless MCP
+ARG JADX_MCP_VERSION=0.7.1
+RUN mkdir -p /opt/jadx && \
+    curl -sL "https://github.com/1013503897/jadx-headless-mcp/releases/download/v${JADX_MCP_VERSION}/jadx-headless-mcp-${JADX_MCP_VERSION}-all.jar" \
+         -o /opt/jadx/jadx-headless-mcp.jar && \
+    chmod 644 /opt/jadx/jadx-headless-mcp.jar
+
 # Clone dev-configs using build secret as root
 RUN --mount=type=secret,id=gitlab_key \
     mkdir -p -m 0700 ~/.ssh && ssh-keyscan gitlab.com >> ~/.ssh/known_hosts && \

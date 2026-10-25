@@ -16,6 +16,8 @@
     - ~/.gemini/rules
     - ~/.claude
     - ~/.agents/skills
+    - ~/.pi
+    - ~/.pi/agent
 
 - link:
     ~/.config/fish/config.fish: shell/fish/config.fish
@@ -37,3 +39,4 @@
       path: agentic/.gemini/rules/*
     ~/.gemini/GEMINI.md: agentic/.gemini/GEMINI.md
     ~/.claude/CLAUDE.md: agentic/.claude/CLAUDE.md
+    ~/.pi/agent/mcp.json: agentic/mcp/pi-mcp.json
