@@ -16,7 +16,7 @@
     "features": {
         "ghcr.io/w3cj/devcontainer-features/firewall:latest": {
             "verbose": true,
-            "hosts": "lh3.googleusercontent.com,opencode.ai,host.docker.internal,herdr.dev",
+            "hosts": "lh3.googleusercontent.com,opencode.ai,host.docker.internal,herdr.dev,dl.google.com,repo.maven.apache.org,plugins.gradle.org,services.gradle.org",
             "githubDomains": true,
             "googleAiApi": true,
             "cratesIoRegistry": true,
