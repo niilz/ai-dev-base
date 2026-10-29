@@ -40,6 +40,11 @@ RUN curl -sL "https://github.com/LuaLS/lua-language-server/releases/download/${L
     && ln -s /opt/lua-language-server/bin/lua-language-server /usr/local/bin/lua-language-server \
     && rm lua-language-server.tar.gz
 
+# Install Java 21 from official Eclipse Temurin image (cached locally in Docker daemon)
+COPY --from=eclipse-temurin:21-jdk /opt/java/openjdk /opt/java/openjdk
+ENV JAVA_HOME=/opt/java/openjdk
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
+
 # Install JADX Headless MCP
 ARG JADX_MCP_VERSION=0.7.1
 RUN mkdir -p /opt/jadx && \
