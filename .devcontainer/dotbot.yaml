@@ -18,6 +18,7 @@
     - ~/.agents/skills
     - ~/.pi
     - ~/.pi/agent
+    - ~/.pi/agent/extensions
 
 - link:
     ~/.config/fish/config.fish: shell/fish/config.fish
@@ -40,3 +41,6 @@
     ~/.gemini/GEMINI.md: agentic/.gemini/GEMINI.md
     ~/.claude/CLAUDE.md: agentic/.claude/CLAUDE.md
     ~/.pi/agent/mcp.json: agentic/mcp/pi-mcp.json
+    ~/.pi/agent/extensions/:
+      glob: true
+      path: agentic/.pi/agent/extensions/*

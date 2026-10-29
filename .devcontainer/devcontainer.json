@@ -60,7 +60,8 @@
         "SHELL": "/usr/bin/fish",
         "ANTIGRAVITY_MIC": "host.docker.internal:4713",
         "HERDR_CONFIG_PATH": "${containerWorkspaceFolder}/.local/herdr/herdr.toml",
-        "NODE_OPTIONS": "--use-system-ca"
+        "NODE_OPTIONS": "--use-system-ca",
+        "HF_HUB_CACHE": "/home/vscode/models"
     },
     "remoteEnv": {
         "PULSE_SERVER": "${containerEnv:ANTIGRAVITY_MIC}"
@@ -70,6 +71,7 @@
         "source=${localWorkspaceFolder}/.local/gemini,target=/home/vscode/.gemini,type=bind,consistency=cached",
         "source=${localWorkspaceFolder}/.local/claude,target=/home/vscode/.claude,type=bind,consistency=cached",
         "source=${localWorkspaceFolder}/.local/pi,target=/home/vscode/.pi,type=bind,consistency=cached",
+        "source=${localEnv:MODELS_HOME},target=/home/vscode/models,type=bind,consistency=cached,readonly",
         "source=herdr-state-${devcontainerId},target=/home/vscode/.config/herdr,type=volume"
     ],
     "initializeCommand": "mkdir -p .local/fish .local/gemini .local/claude .local/herdr .local/pi",
