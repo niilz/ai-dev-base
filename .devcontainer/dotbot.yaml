@@ -11,6 +11,7 @@
     - ~/.config/nvim
     - ~/.config/herdr
     - ~/.config/opencode
+    - ~/.config/gh
     - ~/.gemini
     - ~/.gemini/config
     - ~/.gemini/rules

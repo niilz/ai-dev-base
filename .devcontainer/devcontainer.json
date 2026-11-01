@@ -66,9 +66,10 @@
         "source=${localWorkspaceFolder}/.local/gemini,target=/home/vscode/.gemini,type=bind,consistency=cached",
         "source=${localWorkspaceFolder}/.local/claude,target=/home/vscode/.claude,type=bind,consistency=cached",
         "source=${localWorkspaceFolder}/.local/pi,target=/home/vscode/.pi,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/.local/gh,target=/home/vscode/.config/gh,type=bind,consistency=cached",
         "source=${localEnv:MODELS_HOME},target=/home/vscode/models,type=bind,consistency=cached,readonly",
         "source=herdr-state-${localWorkspaceFolderBasename},target=/home/vscode/.config/herdr,type=volume"
     ],
-    "initializeCommand": "mkdir -p .local/fish .local/gemini .local/claude .local/herdr .local/pi",
+    "initializeCommand": "mkdir -p .local/fish .local/gemini .local/claude .local/herdr .local/pi .local/gh",
     "postCreateCommand": "/opt/post-create.sh"
 }
