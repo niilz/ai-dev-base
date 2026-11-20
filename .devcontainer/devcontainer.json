@@ -20,7 +20,8 @@
             "githubDomains": true,
             "googleAiApi": true,
             "cratesIoRegistry": true,
-            "npmRegistry": true
+            "npmRegistry": true,
+            "openaiApi": true
         },
         "ghcr.io/devcontainers/features/github-cli:1": {},
         "ghcr.io/devcontainers/features/common-utils:2": {},
